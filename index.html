@@ -5,29 +5,46 @@
 <title>Stock Market ML Analysis</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#172033}
-header{background:#12233f;color:white;padding:28px 7%;}header h1{margin:0 0 8px;font-size:30px}header p{margin:0;color:#c9d5e8}
-nav{padding:14px 7%;background:white;border-bottom:1px solid #e5e9f0}nav a{margin-right:24px;color:#315b93;text-decoration:none;font-size:14px}
+header{background:#12233f;color:white;padding:30px 7%}header h1{margin:0 0 8px;font-size:30px}header p{margin:0;color:#c9d5e8}
+nav{padding:14px 7%;background:white;border-bottom:1px solid #e5e9f0;position:sticky;top:0;z-index:2}nav a{margin-right:22px;color:#315b93;text-decoration:none;font-size:14px}
 main{max-width:1100px;margin:32px auto;padding:0 22px}.hero,.card{background:white;border:1px solid #e4e8ef;border-radius:12px;padding:24px;margin-bottom:22px;box-shadow:0 2px 8px rgba(20,35,60,.04)}
-.hero h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.metric{background:#f7f9fc;padding:18px;border-radius:10px}.metric b{display:block;font-size:24px;margin-top:6px}
-table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;padding:13px;border-bottom:1px solid #e8ecf2;font-size:14px}th{background:#f7f9fc}
-.bar{height:10px;background:#dce4ef;border-radius:8px;margin-top:8px}.bar span{display:block;height:100%;background:#356bb3;border-radius:8px}
+.hero h2,.card h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.metric{background:#f7f9fc;padding:18px;border-radius:10px}.metric b{display:block;font-size:20px;margin-bottom:6px}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;padding:11px;border-bottom:1px solid #e8ecf2;font-size:14px}th{background:#f7f9fc}
+.weeks{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.week{border:1px solid #e2e7ef;border-radius:10px;padding:17px;background:#fbfcfe}.week h3{margin:0 0 8px;color:#315b93}.week p{margin:0;line-height:1.5;font-size:14px}
+.note{background:#fff8e8;border-left:4px solid #d49b32;padding:14px;border-radius:8px;line-height:1.5}
 footer{text-align:center;color:#68758a;padding:25px;font-size:13px}
-@media(max-width:700px){.grid{grid-template-columns:1fr}header h1{font-size:24px}}
+@media(max-width:700px){.grid,.weeks{grid-template-columns:1fr}header h1{font-size:24px}table{display:block;overflow-x:auto;white-space:nowrap}}
 </style></head>
 <body>
 <header><h1>Stock Market Analysis using Machine Learning</h1><p>SEML3211 — Foundation of Machine Learning | Research Paper Reproduction & Model Comparison</p></header>
-<nav><a href="#overview">Overview</a><a href="#results">Results</a><a href="#workflow">Workflow</a><a href="#models">Models</a></nav>
+<nav><a href="#overview">Overview</a><a href="#weeks">Week Plan</a><a href="#dataset">Dataset</a><a href="#results">Results</a><a href="#workflow">Workflow</a></nav>
 <main>
-<section class="hero" id="overview"><h2>Project Overview</h2><p>This project studies a published stock-return prediction approach, reproduces a Random Forest workflow, and evaluates Extra Trees as a proposed ensemble alternative.</p><div class="grid"><div class="metric">Base model<b>Random Forest</b></div><div class="metric">Proposed model<b>Extra Trees</b></div><div class="metric">Evaluation<b>6 metrics</b></div></div></section>
-<section class="card" id="results"><h2>Live Experiment Results</h2><p>Observed project-run results from the historical market-data experiment.</p>
-<table><tr><th>Model</th><th>MAE</th><th>MSE</th><th>RMSE</th><th>MAPE</th><th>R²</th><th>Directional Accuracy</th></tr>
+<section class="hero" id="overview"><h2>Project Overview</h2><p>This project studies a published stock-return prediction approach, reproduces a Random Forest workflow, and evaluates Extra Trees as a proposed ensemble alternative.</p><div class="grid"><div class="metric">Base model<b>Random Forest</b></div><div class="metric">Proposed model<b>Extra Trees</b></div><div class="metric">Dataset<b>NIFTY 50 sample</b></div></div></section>
+
+<section class="card" id="weeks"><h2>8-Week Project Progress</h2><div class="weeks">
+<div class="week"><h3>Week 1 — Research Paper</h3><p>Finalize topic, select the base paper and understand its ensemble-learning approach.</p></div>
+<div class="week"><h3>Week 2 — Dataset</h3><p>Collect historical Indian market data and document OHLCV fields and source.</p></div>
+<div class="week"><h3>Week 3 — Preprocessing</h3><p>Clean data, sort chronologically and create technical-indicator features.</p></div>
+<div class="week"><h3>Week 4 — Random Forest</h3><p>Implement the base Random Forest workflow and generate predictions.</p></div>
+<div class="week"><h3>Week 5 — Evaluation</h3><p>Calculate MAE, MSE, RMSE, MAPE, R² and Directional Accuracy.</p></div>
+<div class="week"><h3>Week 6 — Extra Trees</h3><p>Implement the proposed Extra Trees model with time-series validation.</p></div>
+<div class="week"><h3>Week 7 — Comparison</h3><p>Compare both models, prepare charts and document observations.</p></div>
+<div class="week"><h3>Week 8 — Final Submission</h3><p>Finalize paper, code, dataset documentation and the project website.</p></div>
+</div></section>
+
+<section class="card" id="dataset"><h2>Stock Market Dataset</h2><p>A small NIFTY 50 historical sample is included in the repository at <b>data/nifty50_sample.csv</b>. It contains Date, Price, Open, High, Low, Volume and Change %.</p><p>For a larger ML experiment, use the linked public NIFTY 50 datasets documented in the repository README. The sample below is for demonstration and data-loading checks.</p>
+<table><tr><th>Date</th><th>Price</th><th>Open</th><th>High</th><th>Low</th><th>Volume</th><th>Change %</th></tr>
+<tr><td>2024-11-26</td><td>24,192.95</td><td>24,343.30</td><td>24,335.55</td><td>24,130.40</td><td>230.69M</td><td>-0.12%</td></tr>
+<tr><td>2024-11-25</td><td>24,221.90</td><td>24,253.55</td><td>24,351.55</td><td>24,135.45</td><td>687.17M</td><td>1.32%</td></tr>
+<tr><td>2024-11-22</td><td>23,907.25</td><td>23,411.80</td><td>23,956.10</td><td>23,359.00</td><td>367.56M</td><td>2.39%</td></tr>
+</table></section>
+
+<section class="card" id="results"><h2>Experiment Results</h2><table><tr><th>Model</th><th>MAE</th><th>MSE</th><th>RMSE</th><th>MAPE</th><th>R²</th><th>Directional Accuracy</th></tr>
 <tr><td>Random Forest (Reproduction)</td><td>0.056636</td><td>0.005985</td><td>0.077366</td><td>7.322365</td><td>-0.168100</td><td>48.36%</td></tr>
 <tr><td>Proposed Extra Trees</td><td>0.054893</td><td>0.005546</td><td>0.074468</td><td>5.116958</td><td>-0.082244</td><td>49.66%</td></tr>
 <tr><td>Paper Reported Random Forest</td><td>0.035300</td><td>0.003400</td><td>0.058800</td><td>1.564400</td><td>—</td><td>—</td></tr></table></section>
-<section class="card" id="workflow"><h2>ML Workflow</h2><p>Research Paper → Technical Indicators → Random Forest Reproduction → Metric Comparison → Extra Trees → Evaluation</p>
-<div class="metric"><b>Technical indicators</b><div class="bar"><span style="width:82%"></span></div><p>Price, momentum and volume-derived features</p></div>
-<div class="metric"><b>Time-aware evaluation</b><div class="bar"><span style="width:90%"></span></div><p>Chronological train/test split with time-series validation for Extra Trees</p></div></section>
-<section class="card" id="models"><h2>Models & Evaluation</h2><p><b>Random Forest Regressor:</b> used for reproduction of the paper workflow.</p><p><b>Extra Trees Regressor:</b> proposed alternative evaluated with time-aware cross-validation.</p><p><b>Metrics:</b> MAE, MSE, RMSE, MAPE, R² and Directional Accuracy.</p></section>
-<section class="card"><h2>Academic Note</h2><p>The reported project values are experiment observations. They should not be presented as an exact reproduction of the original paper's environment unless the original dataset and preprocessing are independently verified.</p></section>
+
+<section class="card" id="workflow"><h2>ML Workflow</h2><p>Research Paper → Dataset → Preprocessing → Technical Indicators → Random Forest → Evaluation → Extra Trees → Comparison → Final Report</p></section>
+<section class="card"><h2>Academic Note</h2><div class="note">The NIFTY 50 sample in this repository is a small demonstration dataset. For final model training, use a sufficiently large, documented historical dataset and cite its source. Project-run metrics should not be presented as an exact reproduction of the original paper unless the original data and preprocessing are independently verified.</div></section>
 </main><footer>SEML3211 • Stock Market ML Analysis • Academic Project</footer>
 </body></html>
