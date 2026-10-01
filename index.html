@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stock Market ML Analysis</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#172033}
+header{background:#12233f;color:white;padding:28px 7%;}header h1{margin:0 0 8px;font-size:30px}header p{margin:0;color:#c9d5e8}
+nav{padding:14px 7%;background:white;border-bottom:1px solid #e5e9f0}nav a{margin-right:24px;color:#315b93;text-decoration:none;font-size:14px}
+main{max-width:1100px;margin:32px auto;padding:0 22px}.hero,.card{background:white;border:1px solid #e4e8ef;border-radius:12px;padding:24px;margin-bottom:22px;box-shadow:0 2px 8px rgba(20,35,60,.04)}
+.hero h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.metric{background:#f7f9fc;padding:18px;border-radius:10px}.metric b{display:block;font-size:24px;margin-top:6px}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{text-align:left;padding:13px;border-bottom:1px solid #e8ecf2;font-size:14px}th{background:#f7f9fc}
+.bar{height:10px;background:#dce4ef;border-radius:8px;margin-top:8px}.bar span{display:block;height:100%;background:#356bb3;border-radius:8px}
+footer{text-align:center;color:#68758a;padding:25px;font-size:13px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}header h1{font-size:24px}}
+</style></head>
+<body>
+<header><h1>Stock Market Analysis using Machine Learning</h1><p>SEML3211 — Foundation of Machine Learning | Research Paper Reproduction & Model Comparison</p></header>
+<nav><a href="#overview">Overview</a><a href="#results">Results</a><a href="#workflow">Workflow</a><a href="#models">Models</a></nav>
+<main>
+<section class="hero" id="overview"><h2>Project Overview</h2><p>This project studies a published stock-return prediction approach, reproduces a Random Forest workflow, and evaluates Extra Trees as a proposed ensemble alternative.</p><div class="grid"><div class="metric">Base model<b>Random Forest</b></div><div class="metric">Proposed model<b>Extra Trees</b></div><div class="metric">Evaluation<b>6 metrics</b></div></div></section>
+<section class="card" id="results"><h2>Live Experiment Results</h2><p>Observed project-run results from the historical market-data experiment.</p>
+<table><tr><th>Model</th><th>MAE</th><th>MSE</th><th>RMSE</th><th>MAPE</th><th>R²</th><th>Directional Accuracy</th></tr>
+<tr><td>Random Forest (Reproduction)</td><td>0.056636</td><td>0.005985</td><td>0.077366</td><td>7.322365</td><td>-0.168100</td><td>48.36%</td></tr>
+<tr><td>Proposed Extra Trees</td><td>0.054893</td><td>0.005546</td><td>0.074468</td><td>5.116958</td><td>-0.082244</td><td>49.66%</td></tr>
+<tr><td>Paper Reported Random Forest</td><td>0.035300</td><td>0.003400</td><td>0.058800</td><td>1.564400</td><td>—</td><td>—</td></tr></table></section>
+<section class="card" id="workflow"><h2>ML Workflow</h2><p>Research Paper → Technical Indicators → Random Forest Reproduction → Metric Comparison → Extra Trees → Evaluation</p>
+<div class="metric"><b>Technical indicators</b><div class="bar"><span style="width:82%"></span></div><p>Price, momentum and volume-derived features</p></div>
+<div class="metric"><b>Time-aware evaluation</b><div class="bar"><span style="width:90%"></span></div><p>Chronological train/test split with time-series validation for Extra Trees</p></div></section>
+<section class="card" id="models"><h2>Models & Evaluation</h2><p><b>Random Forest Regressor:</b> used for reproduction of the paper workflow.</p><p><b>Extra Trees Regressor:</b> proposed alternative evaluated with time-aware cross-validation.</p><p><b>Metrics:</b> MAE, MSE, RMSE, MAPE, R² and Directional Accuracy.</p></section>
+<section class="card"><h2>Academic Note</h2><p>The reported project values are experiment observations. They should not be presented as an exact reproduction of the original paper's environment unless the original dataset and preprocessing are independently verified.</p></section>
+</main><footer>SEML3211 • Stock Market ML Analysis • Academic Project</footer>
+</body></html>
