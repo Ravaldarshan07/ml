@@ -1,0 +1,7 @@
+Base paper:
+Mohapatra, S., Mukherjee, R., Roy, A., Sengupta, A., & Puniyani, A. (2022).
+Can Ensemble Machine Learning Methods Predict Stock Returns for Indian Banks Using Technical Indicators?
+Journal of Risk and Financial Management, 15(8), 350.
+https://doi.org/10.3390/jrfm15080350
+
+Download the publisher PDF and save it locally as BASE_PAPER.pdf for the final college ZIP.
